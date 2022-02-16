@@ -1,0 +1,22 @@
+<h1>Profile Page</h1>
+
+{{#if session.currentUser}}
+  <h2>Welcome</h2>
+
+{{#if session.currentUser.name}}
+<h2>{{session.currentUser.name}}!</h2>
+{{else}}
+<p>Please, let us know how we can call you!</p>
+
+<form action="/user/add" method="post">
+    <input type="text" id="name" name="name">
+    <button type="submit">Send</button> 
+{{/if}}
+
+</form>
+
+  <p>This is your profile page my friend!</p>
+{{else}}
+  <p>Still no logged in user, sorry!</p>
+{{/if}}
+
